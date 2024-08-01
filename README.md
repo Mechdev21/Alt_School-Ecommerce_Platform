@@ -59,9 +59,9 @@ This project is a web application built using the MERN stack (MongoDB, Express.j
 
 3. **Set up enviromental variables**
 
-    MONGODB_URI=your_mongodb_uri
-    JWT_SECRET=your_jwt_secret
-    PORT=
+- MONGODB_URI=your_mongodb_uri
+- JWT_SECRET=your_jwt_secret
+- PORT=
 
 ## Usage
 
