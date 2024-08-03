@@ -83,6 +83,6 @@ After installing and starting the application, you can:
 - **Sokky**: osokky@yahoo.com
 - **Valentine**: Valentineagaba16@gmail.com
 - **Hilary**: hillaryobah347@gmail com
-- **Efekan**: efeken01@gmail.com
+- **Efeken**: efeken01@gmail.com
 - **Pilfar**: Pilfarelectronic@yahoo.com.com
 - **Enjay**: enjayjerey@gmail.com
