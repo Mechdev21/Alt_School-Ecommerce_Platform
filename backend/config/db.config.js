@@ -5,7 +5,7 @@ const connectMongoDB = () => {
     mongoose
     .connect(configVariables.MONGODB_URL)
     .then( () => {
-        console.log('Mongodb connection succesfull');
+        console.log('Mongodb connection successful');
     })
     .catch( (err) => {
         throw new Error('err', err.message);
