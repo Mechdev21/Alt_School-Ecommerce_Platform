@@ -9,7 +9,10 @@ const  configVariables = {
     CLOUD_NAME: process.env.CLOUD_NAME, 
     CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY, 
     CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
-    JWT_TOKEN: process.env.JWT_TOKEN
+    JWT_TOKEN: process.env.JWT_TOKEN,
+    CLIENT_URL: process.env.CLIENT_URL,
+    EMAIL_USERNAME: process.env.EMAIL_USERNAME,
+    EMAIL_USERNAME: process.env.EMAIL_PASSWORD
 }
 
 module.exports = configVariables;
