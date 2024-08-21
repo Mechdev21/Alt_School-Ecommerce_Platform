@@ -28,10 +28,10 @@ const registerUser = async (req, res) => {
         const token = jwt.sign({ id: newUser._id, email, role: newUser.role }, configVariables.JWT_TOKEN, { expiresIn: "2h" });
 
          const mailOptions = {
-            from: configVariables.EMAIL_USERNAME,
+            from: configVariables.SMTP_USER,
             to: newUser.email,
             subject: 'Welcome to Our E-Commerce App!',
-            text: `Hi ${firstname}, thank you for registering. Click the link below to login:\n\n${configVariables.CLIENT_URL}/login`,
+            text: `Hi ${firstname}, thank you for registering. Click the link below to login:\n\n${configVariables.CLIENT_URL}/login`
         };
         
         await transporter.sendMail(mailOptions);
@@ -122,7 +122,7 @@ const forgotPassword = async (req, res) => {
         const resetLink = `${configVariables.CLIENT_URL}/reset-password/${resetToken}`;
 
         const mailOptions = {
-            from: configVariables.EMAIL_USERNAME,
+            from: configVariables.SMTP_USER,
             to: email,
             subject: 'Password Reset Request',
             text: `You requested a password reset. Click the link below to reset your password:\n\n${resetLink}`,
@@ -158,7 +158,7 @@ const resetPassword = async (req, res) => {
         user.password = hashedPassword;
         await user.save();
 
-        res.status(200).json({ message: "Password reset successful. Redirecting to profile..." });
+        res.status(200).json({ message: "Password reset successful. Redirecting to profile...", user: user });
     } catch (error) {
         console.log(error);
         res.status(500).json({message: error.message});

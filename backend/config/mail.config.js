@@ -1,12 +1,15 @@
 const nodemailer = require('nodemailer');
-const configVariables = require('./config');
+const dotenv = require('dotenv');
 
+dotenv.config('./env');
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE,
     auth: {
-        user: configVariables.EMAIL_USERNAME,
-        pass: configVariables.EMAIL_PASSWORD,
-    },
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    }
 });
 
 module.exports = transporter;

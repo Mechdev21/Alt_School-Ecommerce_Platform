@@ -8,12 +8,14 @@ const { userRegSchema, loginSchema, userUpdateSchema } = require('../joiSchema/u
 router.post('/register', joiValidator(userRegSchema), registerUser);
 router.post('/login', joiValidator(loginSchema), loginUser);
 
+router.post('/forgot-password',  forgotPassword);
+router.post('/reset-password/:token', resetPassword);
+
 router.get('/profile', authenticate, getUserProfile);
 router.put('/profile/update', authenticate, joiValidator(userUpdateSchema), updateUserProfile);
 router.delete('/profile/delete', authenticate, deleteUserProfile);
 
-router.post('/forgot-password',  forgotPassword);
-router.post('/reset-password/:token', resetPassword);
+
 
 
 
