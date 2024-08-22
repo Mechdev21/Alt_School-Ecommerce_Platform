@@ -75,14 +75,6 @@ After installing and starting the application, you can:
 
 ##Authors
 
-- **Favour**: favour@titanname.com
+
 - **Nenye**: chinenyeonyema1@gmail.com
-- **Bukar**: rocksamzy4real@gmail.com
-- **Destiny**: destinykenechukwu63@gmail.com
-- **Sunny**: sunnycyson@gmail.com
-- **Sokky**: osokky@yahoo.com
 - **Valentine**: Valentineagaba16@gmail.com
-- **Hilary**: hillaryobah347@gmail com
-- **Efeken**: efeken01@gmail.com
-- **Pilfar**: Pilfarelectronic@yahoo.com.com
-- **Enjay**: enjayjerey@gmail.com
