@@ -1,13 +1,14 @@
 const dotenv = require('dotenv');
 
-dotenv.config('./env');
+// Load environment variables from the .env file
+dotenv.config({ path: './.env' });
 
-const  configVariables = {
+const configVariables = {
     PORT: process.env.PORT,
-    MONGO_URL: process.env.MONGO_URL,
-    CLOUD_NAME: process.env.CLOUD_NAME, 
-    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY, 
-    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+    MONGODB_URL: process.env.MONGODB_URL,
+    CLOUDINARY_SECRET: process.env.CLOUDINARY_API_SECRET,
+    CLOUDINARY_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_PUBLIC: process.env.CLOUDINARY_API_KEY,
     JWT_TOKEN: process.env.JWT_TOKEN,
     SMTP_HOST: process.env.SMTP_HOST,
     SMTP_PORT: process.env.SMTP_PORT,
@@ -15,6 +16,8 @@ const  configVariables = {
     SMTP_USER: process.env.SMTP_USER,
     SMTP_PASS: process.env.SMTP_PASS,
     CLIENT_URL: process.env.CLIENT_URL 
-}
+};
+
+
 
 module.exports = configVariables;

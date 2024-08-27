@@ -1,37 +1,31 @@
 const express = require('express');
-const mongoDBConnection = require('./config/db.config');
-const routehandler = require('./routes');
+const connectMongoDB = require('./config/db.config');
+const configVariables = require('./config/config');
+const cloudinary = require('cloudinary').v2;
+require('dotenv').config(); 
+const routeHandler = require('./routes');
+
 const app = express();
 
 
-mongoDBConnection();
+connectMongoDB();
+
+
+cloudinary.config({
+    cloud_name: configVariables.CLOUDINARY_NAME,
+    api_key: configVariables.CLOUDINARY_PUBLIC,
+    api_secret: configVariables.CLOUDINARY_SECRET,
+});
 
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/', routehandler);
-
-
-app.use((err, req, res, next) => {
-    console.log(req.headers)
-    if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
-        console.error('Bad JSON: ', err.message);
-        return res.status(400).send({ message: 'Bad JSON' });
-    }
-    next();
-});
-
-
-app.use('*', (req, res) => {
-    res.status(404).json({ message: "ROUTE NOT FOUND" });
-});
+app.use('/', routeHandler);
 
 
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send({ message: 'Something went wrong!' });
+  res.status(500).json({ error: err.message });
 });
 
 module.exports = app;
