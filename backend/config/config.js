@@ -21,4 +21,3 @@ const configVariables = {
 
 
 module.exports = configVariables;
->>>>>>> user-admin-feature
