@@ -11,5 +11,4 @@ const connectMongoDB = () => {
         throw new Error('err', err.message);
     })
 };
-
 module.exports = connectMongoDB
